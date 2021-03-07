@@ -1,0 +1,7 @@
+require('useClasses')
+print(P.age)
+print(P.getAge())
+print(P.getName())
+print(N)
+print(H)
+print(P.height)
