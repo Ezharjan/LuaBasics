@@ -31,9 +31,11 @@ function pushTillSucceed(method,arg)
         local info = method(arg)
         local tag = getCrusialInfo(info)
         if isSuccessful(tag) then
+            print('successful!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             break
         end
     end
+    return
 end
 
 gitCommit()
