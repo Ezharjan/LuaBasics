@@ -24,17 +24,13 @@ function getCrusialInfo(str)
     return res
 end
 
-function isSuccessful(tag)
-    if tag ~= nil then return true
-    else return false end
-end
-
 function tryTillSucceed(method,arg)
     for i = 1,tryTimes,1 do
         local info = method(arg)
         print('argument is: ',arg)
         local tag = getCrusialInfo(info)
-        if isSuccessful(tag) then
+        print('tag ： ', tag)
+        if tag == nil then
             print('successful!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             break
         end
