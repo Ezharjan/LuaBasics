@@ -1,5 +1,8 @@
 local tryTimes = 1000
 
+local pushCmd =  'git push -u origin master'
+local pullCmd =  'git pull'
+
 function gitCommit()
     local args = {'git add .', 'git commit -m \" auto commit in comp form LuaScript\" '}
     for i = 1, #args do
@@ -7,26 +10,25 @@ function gitCommit()
     end
 end
 
-function push()
-    argToExcute = 'git push -u origin master'
+function commander(argToExcute)
     local result = io.popen(argToExcute)
     local strInfo = result:read("*all")
     return strInfo
 end
 
 function getCrusialInfo(str)
--- TODO: CONDUCT STRINGS
-    return str
+    local res = string.lower(str).find(str, 'fatal')
+    return res
 end
 
 function isSuccessful(tag)
-    -- TODO:CHECK WHETHER PUSHING IS SUCCESSFUL
-    return false
+    if tag ~= nil then return true
+    else return false end
 end
 
-function pushTillSucceed()
+function pushTillSucceed(method,arg)
     for i = 1,tryTimes,1 do
-        local info = push()
+        local info = method(arg)
         local tag = getCrusialInfo(info)
         if isSuccessful(tag) then
             break
@@ -34,6 +36,6 @@ function pushTillSucceed()
     end
 end
 
-
 gitCommit()
-pushTillSucceed()
+pushTillSucceed(commander,pushCmd)
+pushTillSucceed(commander,pullCmd)
