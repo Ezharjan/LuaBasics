@@ -1,7 +1,8 @@
 require('cmdAutoTryer')
 
+local commitInfo = 'auto commit at ostime(' .. string.sub(tostring(os.time()),5) .. ') in comp form LuaScript'
 local addCmd = 'git add .'
-local commitCmd = 'git commit -m \" auto commit in comp form LuaScript\" '
+local commitCmd = 'git commit -m ' .. commitInfo
 local pushCmd =  'git push -u origin master'
 local pullCmd =  'git pull'
 
