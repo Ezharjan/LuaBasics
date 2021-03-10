@@ -20,7 +20,6 @@ function tryTillSucceed(arg,tryTimes)
         print('argument is: ',arg)
         print('info:' .. tostring(info))
         local tag = getCrusialInfo(info)
-        print('tag ： ', tag)
         if tag == nil then
             print('Conduction succeeded!')
             break
