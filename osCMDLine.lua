@@ -1,8 +1,9 @@
 -- local res = os.execute('git pull')
 
-local r = io.popen('dir')
+-- local r = io.popen('node -v')
+local r = io.popen('git add .')
 res = r:read('*a')
--- print('res is ' .. tostring(res)) --- 1 or a nonzero number
+print('res is ' .. tostring(res)) --- 1 or a nonzero number
 
 if res ~= nil then
     print('not nil') --- always not nil!
