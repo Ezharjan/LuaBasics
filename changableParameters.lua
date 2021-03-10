@@ -16,7 +16,7 @@ print(getSum(1,2,3,4,5,6,7,8,9))
 
 function concatStrings(...)
     local res = ''
-    for _,v in pairs{...} 
+    for _,v in pairs{...}
     do
         res = res .. v
     end
