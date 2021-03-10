@@ -1,11 +1,14 @@
 local tryTimes = 1000
 
+local addCmd = 'git add .'
+local commitCmd = 'git commit -m \" auto commit in comp form LuaScript\" '
 local pushCmd =  'git push -u origin master'
 local pullCmd =  'git pull'
 
 function gitCommit()
     local args = {'git add .', 'git commit -m \" auto commit in comp form LuaScript\" '}
     for i = 1, #args do
+        print('#@!!!!!@@#@@@@@@@@@@@@',#args)
         os.execute(args[i])
     end
 end
@@ -26,9 +29,10 @@ function isSuccessful(tag)
     else return false end
 end
 
-function pushTillSucceed(method,arg)
+function tryTillSucceed(method,arg)
     for i = 1,tryTimes,1 do
         local info = method(arg)
+        print('argument is: ',arg)
         local tag = getCrusialInfo(info)
         if isSuccessful(tag) then
             print('successful!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
@@ -39,5 +43,5 @@ function pushTillSucceed(method,arg)
 end
 
 gitCommit()
-pushTillSucceed(commander,pushCmd)
-pushTillSucceed(commander,pullCmd)
+tryTillSucceed(commander,pushCmd)
+tryTillSucceed(commander,pullCmd)
