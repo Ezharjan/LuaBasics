@@ -1,6 +1,8 @@
 --[[
     Usage:
     prompt> lua .\profiling.lua .\memFunction.lua
+    The script in second argument will be executed
+    and its profiling infomation is shown in terminal.  
 ]]
 
 

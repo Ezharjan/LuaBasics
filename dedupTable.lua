@@ -1,21 +1,4 @@
-function table.dedup(simpleTable, isArray)
-    local check = {}
-    local result = {}
-    local idx = 1
-    for k, v in pairs(simpleTable) do
-        if not check[v] then
-            if isArray then
-                result[idx] = v
-                idx = idx + 1
-            else
-                result[k] = v
-            end
-            check[v] = true
-        end
-    end
-    return result
-end
-
+require'tableLib'
 
 t = {213,324,34,14,25,33,72,33,33,33,33,33,33,33,33,33,2,2,2,2,22,3,45,213}
 tt = {    a=213,    b=324,    c=34,    d=14,    d=14,    d=14,    e=72    }

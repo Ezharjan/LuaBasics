@@ -64,4 +64,23 @@ for k,v in pairs(destinationTable) do
     end
 end
 
+-----------------------------
 
+print('*****************************')
+require'tableLib'
+-- 数组中不存在table自动去重的情况 (#1)
+t = {'11','22','11'}
+table.showKVPairs(t)
+table.showLength(t)
+print('*****************************')
+-- 键值对的表中会自动去掉重复的键值对 (#1)
+myTable = {a = '11', b = '22', a ='11', a ='11'}
+table.showKVPairs(myTable) -- 只输出两个元素，疑似不输出重复元素？
+table.showLength(myTable) -- 再次检查，发现输出的表的长度只剩下2，重复元素只留下了一个，(#1)成立。
+
+
+print('*****************************')
+print('*****************************')
+myNewTable = {q = '999', a = '11', b = '22', c ='11'}
+resultedTable = table.getRedundantValues(myNewTable)
+table.showKVPairs(resultedTable)
