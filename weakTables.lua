@@ -60,3 +60,23 @@ end
 
 
 
+print('**********************************************')
+
+
+t1, t2 = {}, {}
+
+arr = {}
+arr[1] = t1
+arr[2] = t2
+
+
+setmetatable(arr, {__mode = "v"})  --- weaken the value
+
+t1 = nil --此时我们将t1赋值为nil，表明这一部分的内容我们不需要再使用，可以被回收
+
+collectgarbage()    --  手动执行gc回收操作
+
+for k, v in pairs(arr) do
+    print(k, v)
+end
+
