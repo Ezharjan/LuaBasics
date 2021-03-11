@@ -41,3 +41,15 @@ end);
 coroutine.resume(corChecker);
 coroutine.resume(cor);
 coroutine.status(cor);
+
+--[[
+    result:
+    1
+    2
+    3
+    suspended
+    4
+    5
+    dead
+
+]]

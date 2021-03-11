@@ -7,12 +7,12 @@ function MyFunc()
 end
 
 local inner = MyFunc()
-print(inner())
-print(inner())
+print(inner()) --1
+print(inner()) --2
 
 function MyFunc2()
     local index = 0
-    print('HELLO')
+    print('HELLO') -- HELLO
     return function()
         print(index)
         index = index+1
@@ -20,5 +20,5 @@ function MyFunc2()
 end
 
 local inner2 = MyFunc2()
-inner2()
-inner2()
+inner2() --0 
+inner2() --1

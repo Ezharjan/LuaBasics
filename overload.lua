@@ -110,3 +110,10 @@ test("hello",2)
 test("hello","world")
 test(1,"hello")
 
+--[[
+    result:
+    number  1
+    string number   hello   2
+    default hello   world
+    number ...      1       hello
+]]

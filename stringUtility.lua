@@ -15,5 +15,5 @@ end
 
 crusialInfo = getCrusialInfo(str2)
 isSuccessful = isSuccessful(res)
-print(isSuccessful)
+print(isSuccessful) --false
 

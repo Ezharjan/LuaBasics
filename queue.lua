@@ -4,6 +4,7 @@ function queue.new()
     return setmetatable({first = 1, last = 0}, {__index = queue})
 end
 
+--  添加一个元素并返回true。
 function queue.offer(self, ...)
     for i, v in ipairs({...}) do
         self.last = self.last + 1
@@ -11,6 +12,7 @@ function queue.offer(self, ...)
     end
 end
 
+-- 移除并返回队列头部的元素；如果队列为空，则返回null。
 function queue.poll(self)
     if self.first > self.last then
         return nil
@@ -31,15 +33,15 @@ function queue.size(self)
 end
 
 function queue.clear(self)
-    while self:poll() do end
-    self.first = 1
-    self.last = 0
+    for _, __ in pairs(self) do
+        self.poll(self)
+        self.first = 1
+        self.last = 0
+    end
 end
 
---　轮训队列，结束后返回空
 function queue.iter(self)
     local i = self.first
-
     return function()
     local v = self[i]
     i = i + 1

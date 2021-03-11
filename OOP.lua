@@ -71,3 +71,10 @@ end
 a = test.new(1)
 a:print_x()
 a:hello()
+
+--[[
+    result:
+    initialized x with its value:   1
+    1
+    hello
+]]
