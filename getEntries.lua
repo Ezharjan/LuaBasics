@@ -13,3 +13,12 @@ dofile('data')
 for name in pairs(authors) do print(name)end
 for name in pairs(dates) do print(name)end
 
+--[[
+    result:
+    number of entries: 3
+    Donald E. Knuth
+    Jon Bentley
+    Alexander Ezharjan
+    1992
+    1990
+]]

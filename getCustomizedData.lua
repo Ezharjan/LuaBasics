@@ -27,3 +27,12 @@ end
 
 for year in ipairs(years) do print(year) end -- nothing in console coz the key index does not start from 1
 
+--[[
+    result：
+    Donald E. Knuth
+    Jon Bentley
+    Alexander Ezharjan
+    1992
+    1990
+    199330
+]]

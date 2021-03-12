@@ -1,5 +1,5 @@
 _G['A'] = 'Alex'
-print(A)
+print(A) -- Alex
 
 function getfield (f)
     local v = _G -- start with the table of globals
@@ -22,5 +22,5 @@ function setfield (f, v)
 end
 
 setfield("t.x.y", 10)
-print(t.x.y)
-print(getfield("t.x.y"))
+print(t.x.y) -- 10
+print(getfield("t.x.y")) -- 10

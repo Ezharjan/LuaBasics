@@ -22,7 +22,7 @@ k:22; v:3
 k:17; v:2
 k:23; v:45
 ]]
----> other wise it is ordered from 1 to n in order just like below
+---> otherwise it is ordered from 1 to n in order just like below
 --[[
     k:1; v:213
 k:2; v:324
