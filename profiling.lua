@@ -20,6 +20,7 @@ local function hook ()
 end
 
 
+
 local f = assert(loadfile(arg[1]))
 debug.sethook(hook, "c") -- turn on the hook
 
