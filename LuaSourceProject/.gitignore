@@ -1,0 +1,16 @@
+.vs/
+[Dd]ebug/
+/[Dd]ebug/
+/Release/
+Release/
+[Ll]ogs/
+*.suo
+*.user
+*.userosscache
+*.userprefs
+x64/
+x86
+[Oo]bj
+.vscode/
+.idea/
+
